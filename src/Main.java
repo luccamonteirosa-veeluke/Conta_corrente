@@ -2,7 +2,7 @@ import static java.lang.IO.*;
 void main() {
    println("=== Abertura da conta ===");
    String titular= readln("insira o seu nome");
-   double limite= Double.parseDouble(readln("insira o seu nome"));
+   double limite= Double.parseDouble(readln("insira o seu limite"));
 
    Conta_corrente conta=new Conta_corrente(limite,titular);
 
