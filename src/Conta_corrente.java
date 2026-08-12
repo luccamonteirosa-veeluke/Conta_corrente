@@ -27,7 +27,7 @@ public class Conta_corrente {
         if (dinheiro>saldo && dinheiro>limite){
             System.out.println("ERRO valor invalido ");
         }
-        else if (dinheiro<limite && dinheiro>saldo){
+        else if (dinheiro<=limite && dinheiro>saldo){
             this.limite=(saldo+limite)-dinheiro;
         }
         else {
