@@ -27,6 +27,7 @@ public class Conta_corrente {
         if(dinheiro<=0){
             System.out.println("erro vaor deve ser maior que zero");
         }
+<<<<<<< HEAD
         if (dinheiro<=this.saldo){
             this.saldo -= dinheiro;
             System.out.println("sacado com sucesso");
@@ -36,6 +37,10 @@ public class Conta_corrente {
             this.saldo = 0.0;
             this.limite-=diferenca;
             System.out.println("Sucesso seu dinheiro foi sacado: " + dinheiro);
+=======
+        else if (dinheiro<=limite && dinheiro>saldo){
+            this.limite=(saldo+limite)-dinheiro;
+>>>>>>> aabae48d985a92d2e283aa4222eae40a29f0df59
         }
         else {
             System.out.println("ERRO valor maior que saldo e limite");
