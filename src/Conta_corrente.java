@@ -24,15 +24,21 @@ public class Conta_corrente {
         }
     }
     public void sacar(double dinheiro){
-        if (dinheiro>saldo && dinheiro>limite){
-            System.out.println("ERRO valor invalido ");
+        if(dinheiro<=0){
+            System.out.println("erro vaor deve ser maior que zero");
         }
-        else if (dinheiro<limite && dinheiro>saldo){
-            this.limite=(saldo+limite)-dinheiro;
+        if (dinheiro<=this.saldo){
+            this.saldo -= dinheiro;
+            System.out.println("sacado com sucesso");
+        }
+        if (dinheiro<=(this.saldo + this.limite)){
+            double diferenca= dinheiro -this.saldo;
+            this.saldo = 0.0;
+            this.limite-=diferenca;
+            System.out.println("Sucesso seu dinheiro foi sacado: " + dinheiro);
         }
         else {
-            this.saldo=saldo-dinheiro;
-            System.out.println("seu valor foi sacado");
+            System.out.println("ERRO valor maior que saldo e limite");
         }
     }
     public void getSaldo(){
