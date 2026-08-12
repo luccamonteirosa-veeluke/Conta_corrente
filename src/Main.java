@@ -1,8 +1,31 @@
 import static java.lang.IO.*;
 void main() {
-    Conta_corrente c1=new Conta_corrente();
-    c1.setTitular("casio");
-    c1.depositar(1000);
-    c1.sacar(200);
-    c1.getSaldo();
+   println("=== Abertura da conta ===");
+   String titular= readln("insira o seu nome");
+   double limite= Double.parseDouble(readln("insira o seu nome"));
+
+   Conta_corrente conta=new Conta_corrente(limite,titular);
+
+   boolean ex=true;
+   while (ex){
+       String op = readln("1-depositar . 2-sacar . 3-consutor . 4-sair");
+
+       switch (op){
+           case "1" -> {
+               double dinheirodep=Double.parseDouble(readln("digite o valor para depositar"));
+               conta.depositar(dinheirodep);
+           }
+           case "2" ->{
+               double dinheirosac=Double.parseDouble(readln("digite o valor para sacar"));
+               conta.sacar(dinheirosac);
+           }
+           case "3" ->{
+               conta.getSaldo();
+               conta.getSaldo();
+           }
+           case "4"->{
+               ex=false;
+           }
+       }
+   }
 }

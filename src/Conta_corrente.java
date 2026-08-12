@@ -1,11 +1,17 @@
 public class Conta_corrente {
     private String titular;
     private double saldo=0;
-    private double limite=1000;
+    private double limite=0;
 
 
-    public void setTitular(String titular) {
-        this.titular = titular;
+
+    public  void getTitular(){
+        System.out.println(this.titular);
+    }
+
+    public Conta_corrente(double limite , String titular) {
+        this.limite = limite;
+        this.limite = limite;
     }
 
     public void depositar(double dinheiro){
@@ -22,7 +28,7 @@ public class Conta_corrente {
             System.out.println("ERRO valor invalido ");
         }
         else if (dinheiro<limite && dinheiro>saldo){
-            this.limite=limite-dinheiro;
+            this.limite=(saldo+limite)-dinheiro;
         }
         else {
             this.saldo=saldo-dinheiro;
@@ -31,5 +37,6 @@ public class Conta_corrente {
     }
     public void getSaldo(){
         System.out.println("seu saldo: R$" + saldo );
+        System.out.println("seu limite: R$" + limite);
     }
 }
