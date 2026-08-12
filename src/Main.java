@@ -8,7 +8,7 @@ void main() {
 
    boolean ex=true;
    while (ex){
-       String op = readln("1-depositar . 2-sacar . 3-consutor . 4-sair");
+       String op = readln("1-depositar . 2-sacar . 3-consultar . 4-sair");
 
        switch (op){
            case "1" -> {
